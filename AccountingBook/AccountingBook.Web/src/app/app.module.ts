@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MenuModule,PanelModule, InputTextModule, ButtonModule, TableModule, DialogModule, CalendarModule, CheckboxModule, DropdownModule, InputNumberModule, FieldsetModule, CardModule, TreeTableModule, ToastModule, MessageService, TabViewModule, ChartModule} from 'primeng';
 
@@ -22,6 +22,10 @@ import { TrialBalanceComponent } from './trial-balance/trial-balance.component';
 import { BalanceSheetComponent } from './balance-sheet/balance-sheet.component';
 import { IncomeStatementComponent } from './income-statement/income-statement.component';
 import { AboutComponent } from './about/about.component';
+
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './services/loader-interceptor.service';
+import { MyLoaderComponent } from './my-loader/my-loader.component';
 
 const routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -50,7 +54,8 @@ const routes = [
     TrialBalanceComponent,
     BalanceSheetComponent,
     IncomeStatementComponent,
-    AboutComponent
+    AboutComponent,
+    MyLoaderComponent
     
   ],
   imports: [
@@ -78,7 +83,11 @@ const routes = [
     TabViewModule,
     ChartModule    
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
