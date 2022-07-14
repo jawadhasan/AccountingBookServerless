@@ -1,3 +1,10 @@
+
+Update 14.07.200 (branch dotnet6)
+Application is migrated to ASP .NET Core 6. 
+AWS Lambda is also updated for dotnet6 runtime.
+
+ 
+=======================================================
 Update 04.11.2021
 
 - Docker support and Docker-compose added
