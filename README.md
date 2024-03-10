@@ -1,18 +1,23 @@
 
-Update 14.07.200 (branch dotnet6)
-Application is migrated to ASP .NET Core 6. 
-AWS Lambda is also updated for dotnet6 runtime.
+### Update 10.03.2024 (docker ECS)
+docker files updated for .NET6    
+`docker-compose up`
 
- 
-=======================================================
-Update 04.11.2021
+
+
+
+### Update 14.07.2023 (branch dotnet6)
+Application is migrated to ASP .NET Core 6. 
+AWS Lambda is also updated for dotnet6 runtime. 
+
+### Update 04.11.2021
 
 - Docker support and Docker-compose added
 - Deployment to Kubernetes added
 https://hexquote.com/deploying-a-web-application-to-kubernetes-basics/
 
-=============================================================
-Update 01.11.2020
+
+### Update 01.11.2020
 
 - Web application routing is adjusted for SPA routing.
 - Update ConnectionString if needed (AccountingBook.Web).

@@ -1,0 +1,28 @@
+services:
+  accountingapi:
+    image: jawadhasanshani/accountingapi
+    restart: always    
+    ports:
+        - "5000"
+    build:
+      context: .
+      dockerfile: ./Dockerfile.webapi  
+    networks:
+      - accounting-net   
+  webui:
+    image: jawadhasanshani/accountingui
+    restart: always    
+    ports:
+        - "8080:80"
+    build:
+      context: .
+      dockerfile: ./Dockerfile.ui
+    depends_on:
+      - accountingapi     
+    networks:
+      - accounting-net 
+networks:
+  accounting-net:
+volumes:
+    pgdata:
+        driver: local

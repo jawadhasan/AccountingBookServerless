@@ -13,48 +13,48 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get(`${this.baseUrl}/api/WeatherForecast`).subscribe(res => {
+    return this.http.get(`/api/WeatherForecast`).subscribe(res => {
       this.messages = res;
     });
   }
 
   getCompanyData() {
-    return this.http.get(`${this.baseUrl}/api/company`);
+    return this.http.get(`/api/company`);
   }
 
   saveCompanyData(company) {
-    return this.http.post(`${this.baseUrl}/api/company`, company);
+    return this.http.post(`/api/company`, company);
   }
 
 
   getPostingAccounts() {
-    return this.http.get(`${this.baseUrl}/api/lookup/postingAccounts`);
+    return this.http.get(`/api/lookup/postingAccounts`);
   }
 
   getJournalEntries() {
-    return this.http.get(`${this.baseUrl}/api/journal`);
+    return this.http.get(`/api/journal`);
   }
 
   getJournal(id: number) {
-    return this.http.get(`${this.baseUrl}/api/journal/` + id);
+    return this.http.get(`/api/journal/` + id);
   }
 
   saveJournal(journal) {
-    return this.http.post(`${this.baseUrl}/api/journal/saveJournal`, journal);
+    return this.http.post(`/api/journal/saveJournal`, journal);
   }
 
 
   deleteJournal(id) {
-    return this.http.delete(`${this.baseUrl}/api/journal/` + id);
+    return this.http.delete(`/api/journal/` + id);
   }
 
 
   postJournal(id) {
-    return this.http.post(`${this.baseUrl}/api/journal/postJournal/` + id, null);
+    return this.http.post(`/api/journal/postJournal/` + id, null);
   }
 
   getCoa() {
-    return this.http.get(`${this.baseUrl}/api/accounts`);
+    return this.http.get(`/api/accounts`);
   }
 
 
@@ -62,29 +62,29 @@ export class ApiService {
   //Ledger
 
   getLedgerEntries() {
-    return this.http.get(`${this.baseUrl}/api/ledger`);
+    return this.http.get(`/api/ledger`);
   }
 
 
   //Reports
 
   getTrialBalance() {
-    return this.http.get(`${this.baseUrl}/api/trialBalance`);
+    return this.http.get(`/api/trialBalance`);
   }
 
 
   getBalanceSheet() {
-    return this.http.get(`${this.baseUrl}/api/balanceSheet`);
+    return this.http.get(`/api/balanceSheet`);
   }
 
   getIncomeStatement() {
-    return this.http.get(`${this.baseUrl}/api/incomeStatement`);
+    return this.http.get(`/api/incomeStatement`);
   }
 
   //dashboard
 
   getAccountsSats() {
-    return this.http.get(`${this.baseUrl}/api/dashboard/getAccountsStats`);
+    return this.http.get(`/api/dashboard/getAccountsStats`);
   }
 
 }
