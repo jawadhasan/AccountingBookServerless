@@ -3,6 +3,15 @@
 docker files updated for .NET6    
 `docker-compose up`
 
+#### docker ECS
+`docker context ls`    
+`docker context create ecs awslondon`
+
+`$env:DOCKER_CONTEXT='awslondon'`    
+
+`docker context ls`   
+
+`docker compose up`    
 
 
 
